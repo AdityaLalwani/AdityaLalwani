@@ -59,7 +59,7 @@ class _ProjectsState extends State<Projects> {
       ),
       MobileProject(
         ontab: () {
-          method.launchURL("https://github.com/AdityaLalwani/adityalalwani");
+          method.launchURL("https://github.com/AdityaLalwani/AdityaLalwani");
         },
         image: "assets/images/Portfolio.png",
         projectname: 'Portfolio Website',
