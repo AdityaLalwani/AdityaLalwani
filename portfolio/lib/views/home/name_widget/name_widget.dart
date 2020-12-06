@@ -101,7 +101,7 @@ class SocialAccounts extends StatelessWidget {
         color: Colors.white,
       )
           .mdClick(() {
-            launch("");
+            launch("https://twitter.com/AdityaLalwani6");
           })
           .make()
           .showCursorOnHover,
@@ -111,7 +111,7 @@ class SocialAccounts extends StatelessWidget {
         color: Colors.white,
       )
           .mdClick(() {
-            launch("");
+            launch("https://www.instagram.com/aditya_l_007/");
           })
           .make()
           .showCursorOnHover,
@@ -121,7 +121,7 @@ class SocialAccounts extends StatelessWidget {
         color: Colors.white,
       )
           .mdClick(() {
-            launch("");
+            launch("https://www.linkedin.com/in/aditya-lalwani-ab1249169/");
           })
           .make()
           .showCursorOnHover,
@@ -131,7 +131,7 @@ class SocialAccounts extends StatelessWidget {
         color: Colors.white,
       )
           .mdClick(() {
-            launch("");
+            launch("https://github.com/AdityaLalwani");
           })
           .make()
           .showCursorOnHover,

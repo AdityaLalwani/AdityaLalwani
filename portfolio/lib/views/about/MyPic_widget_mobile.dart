@@ -22,7 +22,7 @@ class MyPicWidget extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.0),
       child: Image(
-        image: new AssetImage("assets/MyPic.jpeg"),
+        image: new AssetImage("assets/images/avi.jpg"),
         height: 150,
         width: 100,
         fit: BoxFit.cover,

@@ -68,7 +68,8 @@ class Introduction extends StatelessWidget {
                 maxWidth: 150,
                 child: RaisedButton(
                   onPressed: () {
-                    launch("");
+                    launch(
+                        "https://drive.google.com/file/d/1hCVCp4FZw9971bxYd56PtXOJLHaRkrfC/view?usp=sharing");
                   },
                   hoverColor: Vx.purple700,
                   shape: Vx.roundedSm,
