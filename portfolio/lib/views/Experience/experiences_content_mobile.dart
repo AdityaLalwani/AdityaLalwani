@@ -35,7 +35,7 @@ class ExperiencesMobile extends StatelessWidget {
                   height: 6.0,
                 ),
                 Text(
-                  "I am currently pursuing Bachelor's Degree in IT.\n",
+                  "I am currently pursuing Bachelor's Degree in B-tech IT.\n",
                   style: TextStyle(
                     fontSize: 13.0,
                     color: Color(0xffCCD6F6).withOpacity(0.5),
