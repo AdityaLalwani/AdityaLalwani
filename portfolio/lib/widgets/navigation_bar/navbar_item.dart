@@ -20,7 +20,7 @@ class NavBarItem extends StatelessWidget {
         child: Text(
           title,
           style: TextStyle(
-              fontSize: 18, color: Color(0xffCCD6F6).withOpacity(0.9)),
+              fontSize: 18, color: Colors.lightBlue[50].withOpacity(0.7)),
         ),
       ),
     );

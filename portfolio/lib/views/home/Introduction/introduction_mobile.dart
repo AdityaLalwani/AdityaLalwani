@@ -54,7 +54,7 @@ class Introduction extends StatelessWidget {
           CustomText(
             text: "I build things for the Android and web.",
             textsize: 30.0,
-            color: Color(0xffCCD6F6).withOpacity(0.6),
+            color: Colors.white70,
             fontWeight: FontWeight.w700,
           ),
           introWidget,
@@ -71,7 +71,7 @@ class Introduction extends StatelessWidget {
                     launch(
                         "https://drive.google.com/file/d/1hCVCp4FZw9971bxYd56PtXOJLHaRkrfC/view?usp=sharing");
                   },
-                  hoverColor: Vx.purple700,
+                  hoverColor: Vx.blue700,
                   shape: Vx.roundedSm,
                   color: Coolors.accentColor,
                   textColor: Coolors.primaryColor,

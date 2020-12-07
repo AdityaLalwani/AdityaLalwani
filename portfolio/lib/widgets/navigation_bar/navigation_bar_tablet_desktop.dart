@@ -24,6 +24,10 @@ class NavigationBarTabletDesktop extends StatelessWidget {
           SizedBox(
             width: 60,
           ),
+          NavBarItem('Skill', SkillRoute),
+          SizedBox(
+            width: 60,
+          ),
           NavBarItem('Projects', ProjectRoute),
         ],
       ),

@@ -74,7 +74,7 @@ class ExperiencePictureWidget extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.30,
           child: Image(
 //                      fit: BoxFit.cover,
-            image: AssetImage("assets/Programmer.png"),
+            image: AssetImage("assets/images/Programmer.png"),
           ),
         ),
       ),

@@ -22,7 +22,7 @@ class ProjectViewMobile extends StatelessWidget {
       child: Container(
         color: Color(0xff0A192F),
         width: 600,
-        height: 6850,
+        height: 3000,
         child: ListView(
 //          shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
@@ -59,10 +59,93 @@ class _ProjectsState extends State<Projects> {
       ),
       MobileProject(
         ontab: () {
+          method.launchURL(
+              "https://github.com/AdityaLalwani/Machine-Learning-App");
+        },
+        image: "assets/images/ml.png",
+        projectname: 'Machine Learning App',
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      MobileProject(
+        ontab: () {
           method.launchURL("https://github.com/AdityaLalwani/AdityaLalwani");
         },
-        image: "assets/images/Portfolio.png",
+        image: "assets/images/portfolio.png",
         projectname: 'Portfolio Website',
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      MobileProject(
+        ontab: () {
+          method.launchURL(
+              "https://github.com/medicine-details-through-web-scraping/MediFo");
+        },
+        image: "assets/images/medifo.png",
+        projectname: 'Medicine Imformation',
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      MobileProject(
+        ontab: () {
+          method.launchURL(
+              "https://github.com/gstapplication-internship/gstapplication");
+        },
+        image: "assets/images/gst.png",
+        projectname:
+            'Gst Application that helps user to calculate and store information of payable tax',
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      MobileProject(
+        ontab: () {
+          method.launchURL(
+              "https://github.com/AdityaLalwani/teslawebsite_clone_UI");
+        },
+        image: "assets/images/tesla.png",
+        projectname: 'Tesla Solar Website UI Design',
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      MobileProject(
+        ontab: () {
+          method.launchURL("https://github.com/AdityaLalwani/passtime");
+        },
+        image: "assets/images/game.png",
+        projectname: 'Games App',
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      MobileProject(
+        ontab: () {
+          method.launchURL("https://github.com/AdityaLalwani/My_Portfolio");
+        },
+        image: "assets/images/portapp.png",
+        projectname: 'Portfolio App',
       ),
       SizedBox(
         height: size.height * 0.07,

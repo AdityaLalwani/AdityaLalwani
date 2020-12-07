@@ -18,6 +18,7 @@ class NavigationDrawer extends StatelessWidget {
           DrawerItem('Home', Icons.home, HomeRoute),
           DrawerItem('About', Icons.person, AboutRoute),
           DrawerItem('Education', Icons.work, ExperienceRoute),
+          DrawerItem('Skill', Icons.developer_board, SkillRoute),
           DrawerItem('Projects', Icons.palette, ProjectRoute),
         ],
       ),

@@ -57,8 +57,8 @@ class MyPicWidget extends StatelessWidget {
               width: size.width / 5,
               color: Colors.black54,
               child: Image(
-                fit: BoxFit.cover,
-                image: AssetImage("assets/images/avi.jpg"),
+                fit: BoxFit.fill,
+                image: AssetImage("assets/images/avi.png"),
               ),
             ),
           ),
