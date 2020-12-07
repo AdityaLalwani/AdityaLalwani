@@ -8,7 +8,7 @@ class ExperienceViewMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final experienceTitle = "--- Education/Experience ---"
+    final experienceTitle = "--- Education ---"
         .text
         .white
         .xl

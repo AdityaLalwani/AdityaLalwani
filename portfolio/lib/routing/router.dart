@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/routing/route_names.dart';
+import 'package:portfolio/views/Skill/skill_view.dart';
 import 'package:portfolio/views/about/about_view.dart';
 import 'package:portfolio/views/home/home_view.dart';
 import 'package:portfolio/views/Experience/experience_view.dart';
@@ -14,6 +15,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(AboutView());
     case ExperienceRoute:
       return _getPageRoute(ExperienceView());
+    case SkillRoute:
+      return _getPageRoute(SkillView());
     case ProjectRoute:
       return _getPageRoute(ProjectView());
     default:

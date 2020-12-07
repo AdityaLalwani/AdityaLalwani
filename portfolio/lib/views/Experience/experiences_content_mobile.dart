@@ -35,7 +35,7 @@ class ExperiencesMobile extends StatelessWidget {
                   height: 6.0,
                 ),
                 Text(
-                  "I am currently pursuing Bachelor's Degree in B-tech IT.\n",
+                  "I am currently pursuing Bachelor's Degree in IT.\n",
                   style: TextStyle(
                     fontSize: 13.0,
                     color: Color(0xffCCD6F6).withOpacity(0.5),
@@ -51,7 +51,7 @@ class ExperiencesMobile extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "Current CGPA - 9.12/10",
+                  "Current CGPA:  9.12/10",
                   style: TextStyle(
                     fontSize: 12.0,
                     color: Color(0xffCCD6F6).withOpacity(0.5),
@@ -64,13 +64,13 @@ class ExperiencesMobile extends StatelessWidget {
           {
             'color': Color(0xff64FFDA),
             'background': Colors.indigo,
-            'label': "📱",
+            'label': "💻",
             'content': Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "",
+                  "S.B.R. Maheshwari Vidyapeeth",
                   style: TextStyle(
                     fontSize: 22.0,
                     color: Colors.white,
@@ -81,7 +81,7 @@ class ExperiencesMobile extends StatelessWidget {
                   height: 6.0,
                 ),
                 Text(
-                  "",
+                  "Class XII.\n",
                   style: TextStyle(
                     fontSize: 13.0,
                     color: Color(0xffCCD6F6).withOpacity(0.5),
@@ -89,197 +89,15 @@ class ExperiencesMobile extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "",
+                  "2017-2018",
                   style: TextStyle(
                     fontSize: 12.0,
                     color: Color(0xffCCD6F6).withOpacity(0.5),
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-              ],
-            ),
-          },
-          {
-            'color': Color(0xff64FFDA),
-            'background': Colors.indigo,
-            'label': '👷🏻‍♀️',
-            'content': Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
                 Text(
-                  "",
-                  style: TextStyle(
-                    fontSize: 22.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                SizedBox(
-                  height: 6.0,
-                ),
-                Text(
-                  "\n",
-                  style: TextStyle(
-                    fontSize: 13.0,
-                    color: Color(0xffCCD6F6).withOpacity(0.5),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                Text(
-                  "",
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    color: Color(0xffCCD6F6).withOpacity(0.5),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
-          },
-          {
-            'color': Color(0xff64FFDA),
-            'background': Colors.indigo,
-            'label': '🎥',
-            'content': Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "",
-                  style: TextStyle(
-                    fontSize: 22.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                SizedBox(
-                  height: 6.0,
-                ),
-                Text(
-                  "\n",
-                  style: TextStyle(
-                    fontSize: 13.0,
-                    color: Color(0xffCCD6F6).withOpacity(0.5),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                Text(
-                  "",
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    color: Color(0xffCCD6F6).withOpacity(0.5),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
-          },
-          {
-            'color': Color(0xff64FFDA),
-            'background': Colors.indigo,
-            'label': '🌟',
-            'content': Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "",
-                  style: TextStyle(
-                    fontSize: 22.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                SizedBox(
-                  height: 6.0,
-                ),
-                Text(
-                  "\n",
-                  style: TextStyle(
-                    fontSize: 13.0,
-                    color: Color(0xffCCD6F6).withOpacity(0.5),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                Text(
-                  "",
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    color: Color(0xffCCD6F6).withOpacity(0.5),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
-          },
-          {
-            'color': Color(0xff64FFDA),
-            'background': Colors.indigo,
-            'label': '🎥',
-            'content': Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "",
-                  style: TextStyle(
-                    fontSize: 22.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                SizedBox(
-                  height: 6.0,
-                ),
-                Text(
-                  "\n",
-                  style: TextStyle(
-                    fontSize: 13.0,
-                    color: Color(0xffCCD6F6).withOpacity(0.5),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                Text(
-                  "",
-                  style: TextStyle(
-                    fontSize: 12.0,
-                    color: Color(0xffCCD6F6).withOpacity(0.5),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
-          },
-          {
-            'color': Color(0xff64FFDA),
-            'background': Colors.indigo,
-            'label': '💬',
-            'content': Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "",
-                  style: TextStyle(
-                    fontSize: 22.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                SizedBox(
-                  height: 6.0,
-                ),
-                Text(
-                  "\n",
-                  style: TextStyle(
-                    fontSize: 13.0,
-                    color: Color(0xffCCD6F6).withOpacity(0.5),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                Text(
-                  "",
+                  "Percentage: 87.6",
                   style: TextStyle(
                     fontSize: 12.0,
                     color: Color(0xffCCD6F6).withOpacity(0.5),
