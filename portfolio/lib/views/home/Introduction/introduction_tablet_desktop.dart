@@ -33,7 +33,7 @@ class Introduction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final introWidget =
-        "I am a 3rd Year undergraduate from Charusat University of Science and technology, Gujarat.\n"
+        "I am a 4th Year undergraduate from Charusat University of Science and technology, Gujarat.\n"
                 "I am Your friendly Neighbourhood Developer  and a Learning Enthusiast,  who is obsessed with the idea of improving himself and wants a platform to grow and excel.\n"
             .text
             .white
