@@ -51,7 +51,7 @@ class ExperiencesMobile extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "Current CGPA:  9.12/10",
+                  "Current CGPA:  9.15/10",
                   style: TextStyle(
                     fontSize: 12.0,
                     color: Color(0xffCCD6F6).withOpacity(0.5),

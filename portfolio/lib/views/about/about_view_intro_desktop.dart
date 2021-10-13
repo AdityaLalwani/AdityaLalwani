@@ -53,7 +53,7 @@ class Introduction extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     final aboutintroWidget =
-        "I am a 3rd Year undergraduate from Charusat University of Science and technology, Gujarat (INDIA).\n"
+        "I am a 4th Year undergraduate from Charusat University of Science and technology, Gujarat (INDIA).\n"
                 "I am Your friendly Neighbourhood Developer  and a Learning Enthusiast,  who is obsessed with the idea of improving himself and wants a platform to grow and excel.\n"
                 "I Love Android and Web Development.\n"
             .text

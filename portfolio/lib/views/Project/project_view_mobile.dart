@@ -60,6 +60,20 @@ class _ProjectsState extends State<Projects> {
       MobileProject(
         ontab: () {
           method.launchURL(
+              "https://github.com/AdityaLalwani/sketch-to-face-gans");
+        },
+        image: "assets/images/sketchtoface.png",
+        projectname: 'Sketch to Face Recognition via GANs',
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      MobileProject(
+        ontab: () {
+          method.launchURL(
               "https://github.com/AdityaLalwani/Machine-Learning-App");
         },
         image: "assets/images/ml.png",

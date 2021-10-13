@@ -57,6 +57,25 @@ class _ProjectsState extends State<Projects> {
           height: size.height * 0.04,
         ),
         FeatureProject(
+          imagePath: "assets/images/sketchtoface.png",
+          ontab: () {
+            method.launchURL(
+                "https://github.com/AdityaLalwani/sketch-to-face-gans");
+          },
+          projectDesc:
+              "The main objective is to generate face of human from the provided sketch of it with the help of generative adversarial networks (GANs). For a typical GAN model, the discriminator aims to decide whether the given inputs are fake or real, while the generator learns to generate sharper and more realistic samples that are indistinguishable from the real samples.",
+          projectTitle: "Sketch to Face Recognition via GANs",
+          tech1: "Machine Learning",
+          tech2: "Flask",
+          tech3: "GANs",
+        ),
+        SizedBox(
+          height: size.height * 0.04,
+        ),
+        SizedBox(
+          height: size.height * 0.04,
+        ),
+        FeatureProject(
           imagePath: "assets/images/ml.png",
           ontab: () {
             method.launchURL(

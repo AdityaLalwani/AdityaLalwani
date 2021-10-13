@@ -37,14 +37,14 @@ class SkillViewDesktop extends StatelessWidget {
               ),
               Skill(
                 size: 170,
-                score: 90,
+                score: 85,
                 skills: "Android\nFlutter",
               ),
               Center(
                 child: Wrap(
                   children: <Widget>[
                     Skill(
-                      score: 70,
+                      score: 60,
                       skills: "Java",
                     ),
                     Skill(
@@ -52,7 +52,7 @@ class SkillViewDesktop extends StatelessWidget {
                       skills: "Html/Css\n/php",
                     ),
                     Skill(
-                      score: 70,
+                      score: 65,
                       skills: "JavaScript",
                     ),
                   ],
@@ -62,15 +62,15 @@ class SkillViewDesktop extends StatelessWidget {
                   child: Wrap(
                 children: [
                   Skill(
-                    score: 80,
-                    skills: "Python",
+                    score: 75,
+                    skills: "Machine Learning",
                   ),
                   Skill(
                     score: 80,
                     skills: "MySQL",
                   ),
                   Skill(
-                    score: 80,
+                    score: 75,
                     skills: "Network",
                   )
                 ],
