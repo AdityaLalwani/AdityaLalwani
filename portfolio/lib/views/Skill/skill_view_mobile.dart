@@ -52,11 +52,11 @@ class SkillViewMobile extends StatelessWidget {
                       skills: "Html/Css\n/php",
                     ),
                     Skill(
-                      score: 60,
+                      score: 65,
                       skills: "JavaScript",
                     ),
                     Skill(
-                      score: 80,
+                      score: 75,
                       skills: "Machine Learning",
                     ),
                     Skill(
