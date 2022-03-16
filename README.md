@@ -1,5 +1,5 @@
 ### Hi there 👋
-### My Portfolio: [adityalalwani](https://avi.engineer/#/)
+### My Portfolio: [Aditya Lalwani](https://avi.engineer/#/)
 <!--
 **AdityaLalwani/AdityaLalwani** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
