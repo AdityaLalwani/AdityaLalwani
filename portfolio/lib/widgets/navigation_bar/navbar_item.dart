@@ -1,4 +1,6 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
+// ignore: unnecessary_import
 import 'package:flutter/rendering.dart';
 import 'package:portfolio/locator.dart';
 import 'package:portfolio/services/navigation_service.dart';

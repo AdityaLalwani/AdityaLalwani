@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:portfolio/locator.dart';
@@ -6,7 +7,7 @@ import 'package:portfolio/routing/route_names.dart';
 import 'package:portfolio/routing/router.dart';
 import 'package:portfolio/services/navigation_service.dart';
 import 'package:portfolio/widgets/centered_view/centered_view.dart';
-import 'package:portfolio/widgets/navigation_bar/navigation_bar.dart';
+import 'package:portfolio/widgets/navigation_bar/navigation_bar.dart' as navBar;
 import 'package:portfolio/Colors/colors.dart';
 
 class LayoutTemplate extends StatelessWidget {
@@ -26,7 +27,7 @@ class LayoutTemplate extends StatelessWidget {
           children: <Widget>[
             CenteredView(
               child: Column(children: <Widget>[
-                NavigationBar(),
+                navBar.NavigationBar(),
                 Expanded(
                   child: Navigator(
                     key: locator<NavigationService>().navigatorKey,

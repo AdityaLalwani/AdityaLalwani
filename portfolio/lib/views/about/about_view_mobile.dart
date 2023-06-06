@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:portfolio/views/about/MyPic_widget_mobile.dart';
 import 'package:portfolio/views/about/about_view_intro_mobile.dart';

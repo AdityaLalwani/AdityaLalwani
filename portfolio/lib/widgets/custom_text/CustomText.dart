@@ -4,13 +4,13 @@ class CustomText extends StatelessWidget {
   final String text;
   final double textsize;
   final Color color;
-  final double letterSpacing;
-  final FontWeight fontWeight;
+  final double? letterSpacing;
+  final FontWeight? fontWeight;
   CustomText(
-      {@required this.text,
-      @required this.textsize,
-      @required this.color,
-      this.letterSpacing,
+      {required this.text,
+      required this.textsize,
+      required this.color,
+      this.letterSpacing ,
       this.fontWeight
     });
   @override

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TranslateOnHover extends StatefulWidget {
   final Widget child;
   // You can also pass the translation in here if you want to
-  TranslateOnHover({Key key, this.child}) : super(key: key);
+  TranslateOnHover({Key? key, required this.child}) : super(key: key);
 
   @override
   _TranslateOnHoverState createState() => _TranslateOnHoverState();

@@ -1,8 +1,14 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:portfolio/jsonData.dart';
 
 class SkillViewDesktop extends StatelessWidget {
+  Future<void> getData() {
+    return Future.value(ReadJsonFile.readJsonData(path: "assets/data.json"));
+  }
+
   @override
   Widget build(BuildContext context) {
     final projectTitle = "--- Skills ---"
@@ -14,7 +20,12 @@ class SkillViewDesktop extends StatelessWidget {
         .bold
         .make()
         .shimmer();
-    return ClipRRect(
+    return FutureBuilder(
+        future: getData(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            final data = snapshot.data;
+            return ClipRRect(
       borderRadius: BorderRadius.circular(20.0),
       child: Container(
         color: Color(0xff0A192F),
@@ -38,22 +49,22 @@ class SkillViewDesktop extends StatelessWidget {
               Skill(
                 size: 170,
                 score: 85,
-                skills: "Android\nFlutter",
+                skills: data['skills1'],
               ),
               Center(
                 child: Wrap(
                   children: <Widget>[
                     Skill(
                       score: 60,
-                      skills: "Java",
+                      skills: data['skills2'],
                     ),
                     Skill(
                       score: 80,
-                      skills: "Html/Css\n/php",
+                      skills: data['skills3'],
                     ),
                     Skill(
                       score: 65,
-                      skills: "JavaScript",
+                      skills: data['skills4'],
                     ),
                   ],
                 ),
@@ -63,21 +74,26 @@ class SkillViewDesktop extends StatelessWidget {
                 children: [
                   Skill(
                     score: 75,
-                    skills: "Machine Learning",
+                    skills: data['skills5'],
                   ),
                   Skill(
                     score: 80,
-                    skills: "MySQL",
+                    skills: data['skills6'],
                   ),
                   Skill(
                     score: 75,
-                    skills: "Network",
+                    skills: data['skills7'],
                   )
                 ],
               )),
             ]),
       ),
     );
+          } else {
+          return CircularProgressIndicator();
+        }
+        });
+    
   }
 }
 

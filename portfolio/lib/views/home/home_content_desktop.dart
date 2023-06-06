@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:portfolio/views/home/name_widget/name_widget.dart';
 import 'package:portfolio/views/home/Introduction/introduction.dart';

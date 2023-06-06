@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:steps/steps.dart';
 
@@ -35,7 +36,7 @@ class ExperiencesMobile extends StatelessWidget {
                   height: 6.0,
                 ),
                 Text(
-                  "I am currently pursuing Bachelor's Degree in IT.\n",
+                  "Bachelor's Degree in IT.\n",
                   style: TextStyle(
                     fontSize: 13.0,
                     color: Color(0xffCCD6F6).withOpacity(0.5),
@@ -43,7 +44,7 @@ class ExperiencesMobile extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "2018 - Present",
+                  "2018 - 2022",
                   style: TextStyle(
                     fontSize: 12.0,
                     color: Color(0xffCCD6F6).withOpacity(0.5),
@@ -51,7 +52,7 @@ class ExperiencesMobile extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "Current CGPA:  9.15/10",
+                  "Current CGPA:  9.2/10",
                   style: TextStyle(
                     fontSize: 12.0,
                     color: Color(0xffCCD6F6).withOpacity(0.5),

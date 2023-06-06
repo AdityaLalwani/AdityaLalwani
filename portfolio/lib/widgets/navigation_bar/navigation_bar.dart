@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/navigation_bar/navigation_bar_mobile.dart';
 import 'package:portfolio/widgets/navigation_bar/navigation_bar_tablet_desktop.dart';

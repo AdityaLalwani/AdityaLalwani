@@ -1,9 +1,11 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:portfolio/Colors/colors.dart';
 import 'package:portfolio/widgets/custom_text/CustomText.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:portfolio/extensions/hover_extensions.dart';
+import 'package:portfolio/jsonData.dart';
 
 class IntroductionTabletDesktop extends StatelessWidget {
   @override
@@ -26,12 +28,19 @@ class IntroductionTabletDesktop extends StatelessWidget {
 }
 
 class Introduction extends StatelessWidget {
+
+  Future<void> getData() {
+    return Future.value(
+        ReadJsonFile.readJsonData(path: "assets/data.json"));
+  }
+
   const Introduction({
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final introWidget =
         "I am a 4th Year undergraduate from Charusat University of Science and technology, Gujarat.\n"
                 "I am Your friendly Neighbourhood Developer  and a Learning Enthusiast,  who is obsessed with the idea of improving himself and wants a platform to grow and excel.\n"
@@ -43,18 +52,32 @@ class Introduction extends StatelessWidget {
             .w(context.isMobile
                 ? context.screenWidth
                 : context.percentWidth * 40);
-    return ListView(children: <Widget>[
+    return FutureBuilder(
+      future: getData(),
+      builder: (context, snapshot){
+        if (snapshot.connectionState == ConnectionState.done) {
+          final data = snapshot.data;
+          return ListView(
+              children: <Widget>[
       " - Introduction".text.gray500.widest.sm.make(),
       SizedBox(
         height: 10,
       ),
       CustomText(
-        text: "I build things for the Android and web.",
+        text: data['introHeading'],
         textsize: 40.0,
         color: Colors.white70,
         fontWeight: FontWeight.w700,
       ),
-      introWidget,
+      // introWidget,
+      data['introWidget'].text
+            .white
+            .xl2
+            .maxLines(15)
+            .make()
+            .w(context.isMobile
+                ? context.screenWidth
+                : context.percentWidth * 40),
 
       SizedBox(
         height: 20,
@@ -63,20 +86,37 @@ class Introduction extends StatelessWidget {
         children: [
           LimitedBox(
             maxWidth: 150,
-            child: RaisedButton(
+            child: ElevatedButton(
               onPressed: () {
                 launch(
                     "https://drive.google.com/file/d/1cdy_RkCUgC17pjHq4aiHBhuhYu-Pk3kL/view?usp=sharing");
               },
-              hoverColor: Vx.blue700,
-              shape: Vx.roundedSm,
-              color: Coolors.accentColor,
-              textColor: Coolors.primaryColor,
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Coolors.accentColor),
+                textStyle: MaterialStateProperty.all(
+                    const TextStyle(color: Coolors.primaryColor)),
+                overlayColor: MaterialStateProperty.resolveWith<Color>(
+                  (Set<MaterialState> states) {
+                    if (states.contains(MaterialState.hovered))
+                      return Vx.blue700; //<-- SEE HERE
+                    return null; // Defer to the widget's default.
+                  },
+                ),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(7.5))),
+              ),
               child: "Resume".text.bold.make(),
             ).h(50),
           ).showCursorOnHover,
         ],
       ), // crossAlignment: CrossAxisAlignment.center,
     ]);
+        } else {
+          return CircularProgressIndicator();
+        }
+      }
+      
+    );
   }
 }

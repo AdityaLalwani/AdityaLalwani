@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/custom_text/CustomText.dart';
 
 class MobileProject extends StatelessWidget {
-  final Function ontab;
-  final String image;
-  final String projectname;
+  final VoidCallback ontab;
+  final String? image;
+  final String? projectname;
 
-  MobileProject({this.ontab, this.image, this.projectname});
+  MobileProject({required this.ontab, this.image, this.projectname});
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +22,14 @@ class MobileProject extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.8,
                 child: Image(
                   fit: BoxFit.fill,
-                  image: AssetImage(image),
+                  image: AssetImage(image!),
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: CustomText(
-                text: projectname,
+                text: projectname!,
                 textsize: 16.0,
                 color: Colors.white.withOpacity(0.4),
                 letterSpacing: 0.75,

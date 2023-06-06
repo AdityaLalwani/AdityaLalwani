@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/widgets/custom_text/CustomText.dart';
@@ -10,7 +11,7 @@ class FeatureProject extends StatelessWidget {
   final String tech1;
   final String tech2;
   final String tech3;
-  final Function ontab;
+  final VoidCallback ontab;
 
   FeatureProject(
       {this.imagePath,

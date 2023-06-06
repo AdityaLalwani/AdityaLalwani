@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/locator.dart';
@@ -16,10 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Aditya Lalwani',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
-        accentColor: Coolors.secondaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: GoogleFonts.poppinsTextTheme(),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.orange)
+            .copyWith(secondary: Coolors.secondaryColor),
       ),
       debugShowCheckedModeBanner: false,
       home: LayoutTemplate(),

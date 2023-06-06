@@ -1,6 +1,8 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/custom_text/CustomText.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:portfolio/jsonData.dart';
 
 class IntroductionAboutMobile extends StatelessWidget {
   @override
@@ -23,6 +25,10 @@ class IntroductionAboutMobile extends StatelessWidget {
 }
 
 class Introduction extends StatelessWidget {
+  Future<void> getData() {
+    return Future.value(ReadJsonFile.readJsonData(path: "assets/data.json"));
+  }
+
   const Introduction({
     Key key,
   }) : super(key: key);
@@ -65,52 +71,61 @@ class Introduction extends StatelessWidget {
             .w(context.isMobile
                 ? context.screenWidth
                 : context.percentWidth * 40);
-    return ListView(
-        physics: NeverScrollableScrollPhysics(),
-        addAutomaticKeepAlives: true,
-        children: <Widget>[
-          aboutintroWidget,
-          CustomText(
-            text:
-                "Here are a few technologies I've been working with recently:\n\n",
-            textsize: 16.0,
-            color: Color(0xff828DAA),
-            fontWeight: FontWeight.w500,
-            letterSpacing: 0.75,
-          ), // crossAlignment: CrossAxisAlignment.center,
-          Container(
-            height: size.height * 0.35,
-            width: size.width,
-            //   color: Colors.redAccent,
-            child: Row(
-              children: [
-                Container(
-                  width: size.width * 0.40,
-                  height: size.height * 0.35,
-                  child: Column(
-                    children: [
-                      technology(context, "Dart"),
-                      technology(context, "Flutter"),
-                      technology(context, "Firebase"),
-                      technology(context, "UI/UX"),
-                    ],
+    return FutureBuilder(
+        future: getData(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            final data = snapshot.data;
+            return ListView(
+                physics: NeverScrollableScrollPhysics(),
+                addAutomaticKeepAlives: true,
+                children: <Widget>[
+                  aboutintroWidget,
+                  CustomText(
+                    text:
+                        "Here are a few technologies I've been working with recently:\n\n",
+                    textsize: 16.0,
+                    color: Color(0xff828DAA),
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 0.75,
+                  ), // crossAlignment: CrossAxisAlignment.center,
+                  Container(
+                    height: size.height * 0.35,
+                    width: size.width,
+                    //   color: Colors.redAccent,
+                    child: Row(
+                      children: [
+                        Container(
+                          width: size.width * 0.40,
+                          height: size.height * 0.35,
+                          child: Column(
+                            children: [
+                              technology(context, "Dart"),
+                              technology(context, "Flutter"),
+                              technology(context, "Firebase"),
+                              technology(context, "UI/UX"),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          width: size.width * 0.40,
+                          height: size.height * 0.35,
+                          child: Column(
+                            children: [
+                              technology(context, "Tensorflow Lite"),
+                              technology(context, "Python"),
+                              technology(context, "HTML/CSS/Javascript/Php"),
+                              technology(context, "Machine Learning"),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                Container(
-                  width: size.width * 0.40,
-                  height: size.height * 0.35,
-                  child: Column(
-                    children: [
-                      technology(context, "Tensorflow Lite"),
-                      technology(context, "Python"),
-                      technology(context, "HTML/CSS/Javascript/Php"),
-                      technology(context, "Machine Learning"),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-        ]);
+                ]);
+          }else{
+            return CircularProgressIndicator();
+          }
+        });
   }
 }

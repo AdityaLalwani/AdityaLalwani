@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:portfolio/views/Skill/skill_view_desktop.dart';
 import 'package:portfolio/views/Skill/skill_view_mobile.dart';

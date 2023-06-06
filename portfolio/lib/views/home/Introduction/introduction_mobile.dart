@@ -1,9 +1,11 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:portfolio/Colors/colors.dart';
 import 'package:portfolio/widgets/custom_text/CustomText.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:portfolio/extensions/hover_extensions.dart';
+import 'package:portfolio/jsonData.dart';
 
 class IntroductionMobile extends StatelessWidget {
   @override
@@ -26,6 +28,11 @@ class IntroductionMobile extends StatelessWidget {
 }
 
 class Introduction extends StatelessWidget {
+  Future<void> getData() {
+    return Future.value(
+        ReadJsonFile.readJsonData(path: "assets/data.json"));
+  }
+
   const Introduction({
     Key key,
   }) : super(key: key);
@@ -43,45 +50,70 @@ class Introduction extends StatelessWidget {
             .w(context.isMobile
                 ? context.screenWidth
                 : context.percentWidth * 40);
-    return ListView(
-        physics: NeverScrollableScrollPhysics(),
-        addAutomaticKeepAlives: true,
-        children: <Widget>[
-          " - Introduction".text.gray500.widest.sm.make(),
-          SizedBox(
-            height: 10,
-          ),
-          CustomText(
-            text: "I build things for the Android and web.",
-            textsize: 30.0,
-            color: Colors.white70,
-            fontWeight: FontWeight.w700,
-          ),
-          introWidget,
-          SizedBox(
-            height: 20,
-          ),
+    return FutureBuilder(
+      future: getData(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          final data = snapshot.data;
+          return ListView(
+              physics: NeverScrollableScrollPhysics(),
+              addAutomaticKeepAlives: true,
+              children: <Widget>[
+                " - Introduction".text.gray500.widest.sm.make(),
+                SizedBox(
+                  height: 10,
+                ),
+                CustomText(
+                  text: data['introHeading'],
+                  textsize: 30.0,
+                  color: Colors.white70,
+                  fontWeight: FontWeight.w700,
+                ),
+                introWidget,
+                SizedBox(
+                  height: 20,
+                ),
 
-          Row(
-            children: [
-              LimitedBox(
-                maxWidth: 150,
-                child: RaisedButton(
-                  onPressed: () {
-                    launch(
-                        "https://drive.google.com/file/d/1cdy_RkCUgC17pjHq4aiHBhuhYu-Pk3kL/view?usp=sharing");
-                  },
-                  hoverColor: Vx.blue700,
-                  shape: Vx.roundedSm,
-                  color: Coolors.accentColor,
-                  textColor: Coolors.primaryColor,
-                  child: "Resume".text.make(),
-                ).h(50),
-              ),
-            ],
-          )
-              .showCursorOnHover
-              .moveUpOnHover, // crossAlignment: CrossAxisAlignment.center,
-        ]);
+                Row(
+                  children: [
+                    LimitedBox(
+                      maxWidth: 150,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          launch(
+                              "https://drive.google.com/file/d/1cdy_RkCUgC17pjHq4aiHBhuhYu-Pk3kL/view?usp=sharing");
+                        },
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Coolors.accentColor),
+                          textStyle: MaterialStateProperty.all(
+                              const TextStyle(color: Coolors.primaryColor)),
+                          overlayColor:
+                              MaterialStateProperty.resolveWith<Color>(
+                            (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.hovered))
+                                return Vx.blue700; //<-- SEE HERE
+                              return null; // Defer to the widget's default.
+                            },
+                          ),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(7.5))),
+                        ),
+                        child: "Resume".text.make(),
+                      ).h(50),
+                    ),
+                  ],
+                )
+                    .showCursorOnHover
+                    .moveUpOnHover, // crossAlignment: CrossAxisAlignment.center,
+              ]);
+        } else {
+          return CircularProgressIndicator();
+        }
+      },
+    );
   }
 }

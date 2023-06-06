@@ -1,8 +1,14 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:portfolio/jsonData.dart';
 
 class SkillViewMobile extends StatelessWidget {
+  Future<void> getData() {
+    return Future.value(ReadJsonFile.readJsonData(path: "assets/data.json"));
+  }
+
   @override
   Widget build(BuildContext context) {
     final projectTitle = "--- Skills ---"
@@ -14,65 +20,74 @@ class SkillViewMobile extends StatelessWidget {
         .bold
         .make()
         .shimmer();
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
-      child: Container(
-        color: Color(0xff0A192F),
-        width: 600,
-        height: 700,
-        child: ListView(
+    return FutureBuilder(
+        future: getData(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            final data = snapshot.data;
+            return ClipRRect(
+              borderRadius: BorderRadius.circular(20.0),
+              child: Container(
+                color: Color(0xff0A192F),
+                width: 600,
+                height: 700,
+                child: ListView(
 //          shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            addAutomaticKeepAlives: true,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                child: Align(
-                  alignment: Alignment.topCenter,
-                  child: projectTitle,
-                ),
+                    physics: NeverScrollableScrollPhysics(),
+                    addAutomaticKeepAlives: true,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                        child: Align(
+                          alignment: Alignment.topCenter,
+                          child: projectTitle,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Skill(
+                        size: 170,
+                        score: 85,
+                        skills: data['skills1'],
+                      ),
+                      Center(
+                        child: Wrap(
+                          children: <Widget>[
+                            Skill(
+                              score: 60,
+                              skills: data['skills2'],
+                            ),
+                            Skill(
+                              score: 80,
+                              skills: data['skills3'],
+                            ),
+                            Skill(
+                              score: 65,
+                              skills: data['skills4'],
+                            ),
+                            Skill(
+                              score: 75,
+                              skills: data['skills5'],
+                            ),
+                            Skill(
+                              score: 80,
+                              skills: data['skills6'],
+                            ),
+                            Skill(
+                              score: 75,
+                              skills: data['skills7'],
+                            )
+                          ],
+                        ),
+                      ),
+                    ]),
               ),
-              SizedBox(
-                height: 40,
-              ),
-              Skill(
-                size: 170,
-                score: 85,
-                skills: "Android\nFlutter",
-              ),
-              Center(
-                child: Wrap(
-                  children: <Widget>[
-                    Skill(
-                      score: 60,
-                      skills: "Java",
-                    ),
-                    Skill(
-                      score: 80,
-                      skills: "Html/Css\n/php",
-                    ),
-                    Skill(
-                      score: 65,
-                      skills: "JavaScript",
-                    ),
-                    Skill(
-                      score: 75,
-                      skills: "Machine Learning",
-                    ),
-                    Skill(
-                      score: 80,
-                      skills: "MySQL",
-                    ),
-                    Skill(
-                      score: 75,
-                      skills: "Network",
-                    )
-                  ],
-                ),
-              ),
-            ]),
-      ),
-    );
+            );
+          } else {
+            return CircularProgressIndicator();
+          }
+        });
   }
 }
 
