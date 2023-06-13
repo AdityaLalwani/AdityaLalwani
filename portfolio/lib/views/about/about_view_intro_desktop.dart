@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:portfolio/widgets/custom_text/CustomText.dart';
-import 'package:portfolio/jsonData.dart';
 
 class IntroductionAboutDesktop extends StatelessWidget {
   @override
@@ -26,9 +25,7 @@ class IntroductionAboutDesktop extends StatelessWidget {
 }
 
 class Introduction extends StatelessWidget {
-  Future<void> getData() {
-    return Future.value(ReadJsonFile.readJsonData(path: "assets/data.json"));
-  }
+  
 
   const Introduction({
     Key key,
@@ -71,20 +68,8 @@ class Introduction extends StatelessWidget {
             .w(context.isMobile
                 ? context.screenWidth
                 : context.percentWidth * 40);
-    return FutureBuilder(
-        future: getData(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            final data = snapshot.data;
-            return ListView(children: <Widget>[
-      // aboutintroWidget,
-      data['aboutintroWidget'].text
-            .white
-            .xl2
-            .make()
-            .w(context.isMobile
-                ? context.screenWidth
-                : context.percentWidth * 40),
+    return ListView(children: <Widget>[
+      aboutintroWidget,
       CustomText(
         text:
             "Here are a few technologies I've been working with recently:\n\n",
@@ -103,10 +88,10 @@ class Introduction extends StatelessWidget {
               height: size.height * 0.25,
               child: Column(
                 children: [
-                  technology(context, data['techno1']),
-                  technology(context, data['techno1']),
-                  technology(context, data['techno1']),
-                  technology(context, data['techno1']),
+                  technology(context, "Dart"),
+                  technology(context, "Flutter"),
+                  technology(context, "Firebase"),
+                  technology(context, "UI/UX"),
                 ],
               ),
             ),
@@ -115,10 +100,10 @@ class Introduction extends StatelessWidget {
               height: size.height * 0.25,
               child: Column(
                 children: [
-                  technology(context, data['techno1']),
-                  technology(context, data['techno1']),
-                  technology(context, data['techno1']),
-                  technology(context, data['techno1']),
+                  technology(context, "Tensorflow Lite"),
+                  technology(context, "Python"),
+                  technology(context, "HTML/CSS/Javascript/Php"),
+                  technology(context, "Machine Learning"),
                 ],
               ),
             )
@@ -126,10 +111,6 @@ class Introduction extends StatelessWidget {
         ),
       ),
     ]);
-          } else {
-          return CircularProgressIndicator();
-        }
-        });
     
   }
 }

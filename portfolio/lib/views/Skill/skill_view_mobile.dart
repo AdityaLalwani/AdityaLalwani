@@ -2,13 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:portfolio/jsonData.dart';
 
 class SkillViewMobile extends StatelessWidget {
-  Future<void> getData() {
-    return Future.value(ReadJsonFile.readJsonData(path: "assets/data.json"));
-  }
-
   @override
   Widget build(BuildContext context) {
     final projectTitle = "--- Skills ---"
@@ -20,12 +15,7 @@ class SkillViewMobile extends StatelessWidget {
         .bold
         .make()
         .shimmer();
-    return FutureBuilder(
-        future: getData(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            final data = snapshot.data;
-            return ClipRRect(
+    return ClipRRect(
               borderRadius: BorderRadius.circular(20.0),
               child: Container(
                 color: Color(0xff0A192F),
@@ -49,34 +39,34 @@ class SkillViewMobile extends StatelessWidget {
                       Skill(
                         size: 170,
                         score: 85,
-                        skills: data['skills1'],
+                        skills: "Salesforce",
                       ),
                       Center(
                         child: Wrap(
                           children: <Widget>[
                             Skill(
                               score: 60,
-                              skills: data['skills2'],
+                              skills: "Flutter-Dart",
                             ),
                             Skill(
                               score: 80,
-                              skills: data['skills3'],
+                              skills: "Html/Css/JavaScript",
                             ),
                             Skill(
                               score: 65,
-                              skills: data['skills4'],
+                              skills: "MySQL",
                             ),
                             Skill(
                               score: 75,
-                              skills: data['skills5'],
+                              skills: "Java",
                             ),
                             Skill(
                               score: 80,
-                              skills: data['skills6'],
+                              skills: "Networking",
                             ),
                             Skill(
                               score: 75,
-                              skills: data['skills7'],
+                              skills: "Machine Learning",
                             )
                           ],
                         ),
@@ -84,10 +74,6 @@ class SkillViewMobile extends StatelessWidget {
                     ]),
               ),
             );
-          } else {
-            return CircularProgressIndicator();
-          }
-        });
   }
 }
 

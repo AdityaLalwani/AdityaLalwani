@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/custom_text/CustomText.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:portfolio/jsonData.dart';
 
 class IntroductionAboutMobile extends StatelessWidget {
   @override
@@ -25,10 +24,6 @@ class IntroductionAboutMobile extends StatelessWidget {
 }
 
 class Introduction extends StatelessWidget {
-  Future<void> getData() {
-    return Future.value(ReadJsonFile.readJsonData(path: "assets/data.json"));
-  }
-
   const Introduction({
     Key key,
   }) : super(key: key);
@@ -71,12 +66,7 @@ class Introduction extends StatelessWidget {
             .w(context.isMobile
                 ? context.screenWidth
                 : context.percentWidth * 40);
-    return FutureBuilder(
-        future: getData(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            final data = snapshot.data;
-            return ListView(
+    return ListView(
                 physics: NeverScrollableScrollPhysics(),
                 addAutomaticKeepAlives: true,
                 children: <Widget>[
@@ -123,9 +113,5 @@ class Introduction extends StatelessWidget {
                     ),
                   ),
                 ]);
-          }else{
-            return CircularProgressIndicator();
-          }
-        });
   }
 }

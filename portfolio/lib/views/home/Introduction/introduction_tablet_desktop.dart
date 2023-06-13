@@ -5,7 +5,6 @@ import 'package:portfolio/widgets/custom_text/CustomText.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:portfolio/extensions/hover_extensions.dart';
-import 'package:portfolio/jsonData.dart';
 
 class IntroductionTabletDesktop extends StatelessWidget {
   @override
@@ -28,19 +27,12 @@ class IntroductionTabletDesktop extends StatelessWidget {
 }
 
 class Introduction extends StatelessWidget {
-
-  Future<void> getData() {
-    return Future.value(
-        ReadJsonFile.readJsonData(path: "assets/data.json"));
-  }
-
   const Introduction({
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
     final introWidget =
         "I am a 4th Year undergraduate from Charusat University of Science and technology, Gujarat.\n"
                 "I am Your friendly Neighbourhood Developer  and a Learning Enthusiast,  who is obsessed with the idea of improving himself and wants a platform to grow and excel.\n"
@@ -52,32 +44,19 @@ class Introduction extends StatelessWidget {
             .w(context.isMobile
                 ? context.screenWidth
                 : context.percentWidth * 40);
-    return FutureBuilder(
-      future: getData(),
-      builder: (context, snapshot){
-        if (snapshot.connectionState == ConnectionState.done) {
-          final data = snapshot.data;
-          return ListView(
+    return ListView(
               children: <Widget>[
       " - Introduction".text.gray500.widest.sm.make(),
       SizedBox(
         height: 10,
       ),
       CustomText(
-        text: data['introHeading'],
+        text: "I build things for the Android and web.",
         textsize: 40.0,
         color: Colors.white70,
         fontWeight: FontWeight.w700,
       ),
-      // introWidget,
-      data['introWidget'].text
-            .white
-            .xl2
-            .maxLines(15)
-            .make()
-            .w(context.isMobile
-                ? context.screenWidth
-                : context.percentWidth * 40),
+      introWidget,
 
       SizedBox(
         height: 20,
@@ -112,11 +91,5 @@ class Introduction extends StatelessWidget {
         ],
       ), // crossAlignment: CrossAxisAlignment.center,
     ]);
-        } else {
-          return CircularProgressIndicator();
-        }
-      }
-      
-    );
   }
 }
