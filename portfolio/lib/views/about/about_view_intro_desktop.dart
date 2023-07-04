@@ -25,8 +25,6 @@ class IntroductionAboutDesktop extends StatelessWidget {
 }
 
 class Introduction extends StatelessWidget {
-  
-
   const Introduction({
     Key key,
   }) : super(key: key);
@@ -58,7 +56,7 @@ class Introduction extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     // ignore: unused_local_variable
     final aboutintroWidget =
-        "I am a 4th Year undergraduate from Charusat University of Science and technology, Gujarat (INDIA).\n"
+        "I have done my B.Tech from Charusat University of Science and technology, Gujarat (INDIA).\n"
                 "I am Your friendly Neighbourhood Developer  and a Learning Enthusiast,  who is obsessed with the idea of improving himself and wants a platform to grow and excel.\n"
                 "I Love Android and Web Development.\n"
             .text
@@ -88,9 +86,9 @@ class Introduction extends StatelessWidget {
               height: size.height * 0.25,
               child: Column(
                 children: [
-                  technology(context, "Dart"),
-                  technology(context, "Flutter"),
-                  technology(context, "Firebase"),
+                  technology(context, "Salesforce"),
+                  technology(context, "B2C Commerce Cloud"),
+                  technology(context, "Fluter/Dart"),
                   technology(context, "UI/UX"),
                 ],
               ),
@@ -100,9 +98,9 @@ class Introduction extends StatelessWidget {
               height: size.height * 0.25,
               child: Column(
                 children: [
-                  technology(context, "Tensorflow Lite"),
+                  technology(context, "HTML/CSS/Javascript"),
                   technology(context, "Python"),
-                  technology(context, "HTML/CSS/Javascript/Php"),
+                  technology(context, "JAVA"),
                   technology(context, "Machine Learning"),
                 ],
               ),
@@ -111,6 +109,5 @@ class Introduction extends StatelessWidget {
         ),
       ),
     ]);
-    
   }
 }

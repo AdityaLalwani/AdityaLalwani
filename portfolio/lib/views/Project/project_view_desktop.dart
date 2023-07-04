@@ -58,6 +58,25 @@ class _ProjectsState extends State<Projects> {
           height: size.height * 0.04,
         ),
         FeatureProject(
+          imagePath: "assets/images/StockP.png",
+          ontab: () {
+            method.launchURL(
+                "https://github.com/AdityaLalwani/StockPortfolio");
+          },
+          projectDesc:
+              "The main objective is to Empowering Investors with Salesforce-Integrated Portfolio Insights.",
+          projectTitle: "Stock Portfolio Manager",
+          tech1: "Salesforce",
+          tech2: "API",
+          tech3: "Stock Market",
+        ),
+        SizedBox(
+          height: size.height * 0.04,
+        ),
+        SizedBox(
+          height: size.height * 0.04,
+        ),
+        FeatureProject(
           imagePath: "assets/images/sketchtoface.png",
           ontab: () {
             method.launchURL(

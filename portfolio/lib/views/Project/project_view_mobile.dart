@@ -61,6 +61,20 @@ class _ProjectsState extends State<Projects> {
       MobileProject(
         ontab: () {
           method.launchURL(
+              "https://github.com/AdityaLalwani/StockPortfolio");
+        },
+        image: "assets/images/StockP.png",
+        projectname: 'Stock Portfolio Manager',
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      SizedBox(
+        height: size.height * 0.07,
+      ),
+      MobileProject(
+        ontab: () {
+          method.launchURL(
               "https://github.com/AdityaLalwani/sketch-to-face-gans");
         },
         image: "assets/images/sketchtoface.png",

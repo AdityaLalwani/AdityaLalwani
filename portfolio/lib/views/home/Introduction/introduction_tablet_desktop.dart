@@ -34,7 +34,7 @@ class Introduction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final introWidget =
-        "I am a 4th Year undergraduate from Charusat University of Science and technology, Gujarat.\n"
+        "I have done my B.Tech from Charusat University of Science and technology, Gujarat.\n"
                 "I am Your friendly Neighbourhood Developer  and a Learning Enthusiast,  who is obsessed with the idea of improving himself and wants a platform to grow and excel.\n"
             .text
             .white
@@ -44,14 +44,13 @@ class Introduction extends StatelessWidget {
             .w(context.isMobile
                 ? context.screenWidth
                 : context.percentWidth * 40);
-    return ListView(
-              children: <Widget>[
+    return ListView(children: <Widget>[
       " - Introduction".text.gray500.widest.sm.make(),
       SizedBox(
         height: 10,
       ),
       CustomText(
-        text: "I build things for the Android and web.",
+        text: "I build things on CLOUD.",
         textsize: 40.0,
         color: Colors.white70,
         fontWeight: FontWeight.w700,

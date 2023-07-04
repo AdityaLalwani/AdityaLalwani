@@ -33,7 +33,9 @@ class Introduction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final introWidget ="I am Your friendly Neighbourhood Developer and a Learning Enthusiast, who is obsessed with the idea of improving himself and wants a platform to grow and excel.\n"
+    final introWidget =
+        "I have done my B.Tech from Charusat University of Science and technology, Gujarat.\n"
+                "I am Your friendly Neighbourhood Developer and a Learning Enthusiast, who is obsessed with the idea of improving himself and wants a platform to grow and excel.\n"
             .text
             .white
             .xl2
@@ -43,59 +45,56 @@ class Introduction extends StatelessWidget {
                 ? context.screenWidth
                 : context.percentWidth * 40);
     return ListView(
-              physics: NeverScrollableScrollPhysics(),
-              addAutomaticKeepAlives: true,
-              children: <Widget>[
-                " - Introduction".text.gray500.widest.sm.make(),
-                SizedBox(
-                  height: 10,
-                ),
-                CustomText(
-                  text: "I build things for the Android and web.",
-                  textsize: 30.0,
-                  color: Colors.white70,
-                  fontWeight: FontWeight.w700,
-                ),
-                introWidget,
-                SizedBox(
-                  height: 20,
-                ),
+        physics: NeverScrollableScrollPhysics(),
+        addAutomaticKeepAlives: true,
+        children: <Widget>[
+          " - Introduction".text.gray500.widest.sm.make(),
+          SizedBox(
+            height: 10,
+          ),
+          CustomText(
+            text: "I build things on CLOUD.",
+            textsize: 30.0,
+            color: Colors.white70,
+            fontWeight: FontWeight.w700,
+          ),
+          introWidget,
+          SizedBox(
+            height: 20,
+          ),
 
-                Row(
-                  children: [
-                    LimitedBox(
-                      maxWidth: 150,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          launch(
-                              "https://drive.google.com/file/d/1cdy_RkCUgC17pjHq4aiHBhuhYu-Pk3kL/view?usp=sharing");
-                        },
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(Coolors.accentColor),
-                          textStyle: MaterialStateProperty.all(
-                              const TextStyle(color: Coolors.primaryColor)),
-                          overlayColor:
-                              MaterialStateProperty.resolveWith<Color>(
-                            (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.hovered))
-                                return Vx.blue700; //<-- SEE HERE
-                              return null; // Defer to the widget's default.
-                            },
-                          ),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(7.5))),
-                        ),
-                        child: "Resume".text.make(),
-                      ).h(50),
+          Row(
+            children: [
+              LimitedBox(
+                maxWidth: 150,
+                child: ElevatedButton(
+                  onPressed: () {
+                    launch(
+                        "https://drive.google.com/file/d/1cdy_RkCUgC17pjHq4aiHBhuhYu-Pk3kL/view?usp=sharing");
+                  },
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Coolors.accentColor),
+                    textStyle: MaterialStateProperty.all(
+                        const TextStyle(color: Coolors.primaryColor)),
+                    overlayColor: MaterialStateProperty.resolveWith<Color>(
+                      (Set<MaterialState> states) {
+                        if (states.contains(MaterialState.hovered))
+                          return Vx.blue700; //<-- SEE HERE
+                        return null; // Defer to the widget's default.
+                      },
                     ),
-                  ],
-                )
-                    .showCursorOnHover
-                    .moveUpOnHover, // crossAlignment: CrossAxisAlignment.center,
-              ]);
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(7.5))),
+                  ),
+                  child: "Resume".text.make(),
+                ).h(50),
+              ),
+            ],
+          )
+              .showCursorOnHover
+              .moveUpOnHover, // crossAlignment: CrossAxisAlignment.center,
+        ]);
   }
 }

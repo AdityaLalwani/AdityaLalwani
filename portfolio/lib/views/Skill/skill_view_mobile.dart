@@ -38,14 +38,14 @@ class SkillViewMobile extends StatelessWidget {
                       ),
                       Skill(
                         size: 170,
-                        score: 85,
+                        score: 80,
                         skills: "Salesforce",
                       ),
                       Center(
                         child: Wrap(
                           children: <Widget>[
                             Skill(
-                              score: 60,
+                              score: 65,
                               skills: "Flutter-Dart",
                             ),
                             Skill(

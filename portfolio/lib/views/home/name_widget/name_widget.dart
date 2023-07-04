@@ -108,11 +108,11 @@ class SocialAccounts extends StatelessWidget {
           .showCursorOnHover,
       20.widthBox,
       Icon(
-        AntDesign.instagram,
+        AntDesign.cloudo,
         color: Colors.white,
       )
           .mdClick(() {
-            launch("https://www.instagram.com/aditya_l_007/");
+            launch("https://trailblazer.me/id/adityalalwani");
           })
           .make()
           .showCursorOnHover,
